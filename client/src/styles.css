@@ -79,6 +79,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .link { color: var(--accent); font-size: 0.85rem; }
 .link.danger { color: var(--danger); }
 
+/* Marquee */
+.marquee { overflow: hidden; padding: 22px 0; border-top: 1px solid var(--line); background: var(--bg); }
+.marquee-track { display: flex; width: max-content; animation: marquee 45s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-group { display: flex; flex-shrink: 0; gap: 56px; padding-right: 56px; }
+.marquee-group span { white-space: nowrap; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
 /* Sections */
 .section { padding: 96px 0; border-top: 1px solid var(--line); scroll-margin-top: var(--nav-h); }
 .label { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.72rem; color: var(--accent); margin-bottom: 12px; }
